@@ -29,6 +29,8 @@ public class ManagementController : MonoBehaviour
     public GameObject btn_plastic;
     public GameObject btn_hat;
 
+    public GameObject[] btn_label;
+
     private int farmer_level = 0;
     private int ground_level = -1;
     private int plastic_level = 0;
@@ -42,33 +44,48 @@ public class ManagementController : MonoBehaviour
     private float delay_time = 2;
 
 
+    private void FinalBtn() 
+    {
+        btn_pineapple.GetComponent<Animator>().SetTrigger("reflip");
+        btn_farmer.GetComponent<Animator>().SetTrigger("reflip");
+        btn_hat.GetComponent<Animator>().SetTrigger("reflip");
+        btn_ground.GetComponent<Animator>().SetTrigger("reflip");
+        btn_plastic.GetComponent<Animator>().SetTrigger("reflip");
+
+        for (int i = 0; i < 5; i++)
+        {
+            btn_label[i].SetActive(true);
+
+        }
+    }
+
     private void PineappleAndFarmer()
     {
-        if (farmer_level == 1 && pineapple_level == 1) // 1¯Å»ñ±ùÄ²µo1¯Å¹A¤Ò
+        if (farmer_level == 1 && pineapple_level == 1) // 1ï¿½Å»ï¿½ï¿½Ä²ï¿½o1ï¿½Å¹Aï¿½ï¿½
         {
             have_delay = true;
             delay_time = 3;
             delay_anim = "farmer";
         }
-        else if (farmer_level == 2 && pineapple_level == 1) // 2¯Å¹A¤ÒÄ²µo1¯Å»ñ±ù
+        else if (farmer_level == 2 && pineapple_level == 1) // 2ï¿½Å¹Aï¿½ï¿½Ä²ï¿½o1ï¿½Å»ï¿½ï¿½
         {
-            Debug.Log("2¯Å»ñ±ù");
+            Debug.Log("2ï¿½Å»ï¿½ï¿½");
             pineapple_level += 1;
             have_delay = true;
             delay_time = 3;
             delay_anim = "pineapple";
             target = 7;
         }
-        else if (farmer_level == 2 && pineapple_level == 2) // 2¯Å»ñ±ùÄ²µo2¯Å¹A¤Ò
+        else if (farmer_level == 2 && pineapple_level == 2) // 2ï¿½Å»ï¿½ï¿½Ä²ï¿½o2ï¿½Å¹Aï¿½ï¿½
         {
-            Debug.Log("»¶¤âºRªá");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½");
             have_delay = true;
             delay_time = 4;
             delay_anim = "farmer";
         }
-        else if (farmer_level == 3 && pineapple_level == 2) // 3¯Å¹A¤ÒÄ²µo2¯Å»ñ±ù
+        else if (farmer_level == 3 && pineapple_level == 2) // 3ï¿½Å¹Aï¿½ï¿½Ä²ï¿½o2ï¿½Å»ï¿½ï¿½
         {
-            Debug.Log("ªøªá");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
             pineapple_level += 1;
             have_delay = true;
             delay_time = 3.5f;
@@ -81,6 +98,7 @@ public class ManagementController : MonoBehaviour
             delay_time = 3;
             delay_anim = "success";
             steam.SetActive(false);
+            FinalBtn();
         }
 
     }
@@ -91,18 +109,18 @@ public class ManagementController : MonoBehaviour
         if (farmer_level == 3) SetRunTarget(11);
         farmer.GetComponent<ObjectController>().SetLevel(farmer_level);
 
-        if (farmer_level == 1 && ground_level == -1) { // ¦pªGÂ½¤g¤g¦aÁÙ¨S¬IªÎ¹L
+        if (farmer_level == 1 && ground_level == -1) { // ï¿½pï¿½GÂ½ï¿½gï¿½gï¿½aï¿½Ù¨Sï¿½Iï¿½Î¹L
             SetGroundLevel();
         }
 
         PineappleAndFarmer();
     }
 
-    //±±¨î¤g¦a
+    //ï¿½ï¿½ï¿½ï¿½gï¿½a
     public void SetGroundLevel()
     {
-        if (!has_plastic) { //ÁÙ¨S¦³»\¥¬¤~·|¬IªÎ¦¨¥\
-            if (ground_level == -1) // ¨S¦³Â½¤g
+        if (!has_plastic) { //ï¿½Ù¨Sï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½~ï¿½|ï¿½Iï¿½Î¦ï¿½ï¿½\
+            if (ground_level == -1) // ï¿½Sï¿½ï¿½Â½ï¿½g
             {
                 ground_level = 0;
                 ground.GetComponent<GroundCotroller>().SetGroundLevel(ground_level);
@@ -119,18 +137,18 @@ public class ManagementController : MonoBehaviour
 
     }
 
-    // click ¶ì½¦¥¬
+    // click ï¿½ì½¦ï¿½ï¿½
     public void SetPlastic()
     {
         plastic_level += 1;
         ground.GetComponent<GroundCotroller>().SetPlasticLevel(plastic_level);
-        //¦pªG¤w¸g¬IªÎ1¦Û°Ê¤É¯Å
+        //ï¿½pï¿½Gï¿½wï¿½gï¿½Iï¿½ï¿½1ï¿½Û°Ê¤É¯ï¿½
         if (ground_level == 1)
         {
             SetGroundLevel();
         }
 
-        //¦pªG¬O¶ì½¦2¤â°Ê¼·°Êµe
+        //ï¿½pï¿½Gï¿½Oï¿½ì½¦2ï¿½ï¿½Ê¼ï¿½ï¿½Êµe
         if (plastic_level == 2)
         {
             ground.GetComponent<GroundCotroller>().SetPlasticAnim();
@@ -163,17 +181,17 @@ public class ManagementController : MonoBehaviour
     {
         switch(y){
             case 1:
-                year.text = "²Ä¤@¦~";
+                year.text = "ç¬¬ä¸€å¹´";
                 break;
             case 2:
-                year.text = "²Ä¤G¦~";
+                year.text = "ç¬¬äºŒå¹´";
                 break;
             case 3:
-                year.text = "²Ä¤T¦~";
+                year.text = "ç¬¬ä¸‰å¹´";
                 break;
         }
         month.text = m.ToString();
-        Debug.Log($"²Ä{y}¦~ {m}¤ë");
+        Debug.Log($"ï¿½ï¿½{y}ï¿½~ {m}ï¿½ï¿½");
     }
 
   
@@ -217,7 +235,7 @@ public class ManagementController : MonoBehaviour
 
     private void DelayAnimation()
     {
-        // «e­±¤@©w¦³¨ä¥L°Êµe¦A¶]
+        // ï¿½eï¿½ï¿½ï¿½@ï¿½wï¿½ï¿½ï¿½ï¿½Lï¿½Êµeï¿½Aï¿½]
         switch (delay_anim)
         {
             case "pineapple":
@@ -252,7 +270,7 @@ public class ManagementController : MonoBehaviour
                 DelayAnimation();
             }
         }
-        if (cal_run) // ­pºâ¤é¾ä
+        if (cal_run) // ï¿½pï¿½ï¿½ï¿½ï¿½
         {
             cal_time += Time.deltaTime;
             if (cal_time >= 0.5f)
