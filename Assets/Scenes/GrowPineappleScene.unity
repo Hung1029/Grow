@@ -2662,8 +2662,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 8.0ph
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3fab17797c74d134fa12e8b289739afe, type: 2}
-  m_sharedMaterial: {fileID: -9192887585354825528, guid: 3fab17797c74d134fa12e8b289739afe, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b772dc11635f48644bb6cca637fea015, type: 2}
+  m_sharedMaterial: {fileID: 4178728593556924557, guid: b772dc11635f48644bb6cca637fea015, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3956,8 +3956,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 46.2, y: -52.6}
-  m_SizeDelta: {x: 112.0186, y: 50}
+  m_AnchoredPosition: {x: 43.6, y: -49}
+  m_SizeDelta: {x: 117.1642, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794624633
 MonoBehaviour:
@@ -3979,7 +3979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9178\u9E7C\u503C  : "
+  m_text: "\u9178\u9E7C\u503C : "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b772dc11635f48644bb6cca637fea015, type: 2}
   m_sharedMaterial: {fileID: 4178728593556924557, guid: b772dc11635f48644bb6cca637fea015, type: 2}
@@ -4006,8 +4006,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
