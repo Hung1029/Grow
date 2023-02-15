@@ -2280,7 +2280,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: bg
     clip: {fileID: 8300000, guid: f363f48ccd3ef314e8631325d3a34685, type: 3}
-    volumn: 1.5
+    volumn: 0
     pitch: 1
     loop: 1
     source: {fileID: 0}
