@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
     }
     private void Start()
     {
-        Play("bg");
+        // Play("bg");
     }
     public void Play(string name)
     {

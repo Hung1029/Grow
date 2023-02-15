@@ -15,10 +15,15 @@ public class GroundCotroller : ObjectController
     private float timestamp = 0;
 
     public AudioSource levelUp;
+    public AudioSource audio_plastic;
 
 
     public void PlayLevelU() {
         levelUp.Play(0);
+    }
+
+    public void PlayAudioPlastic() {
+        audio_plastic.Play(0);
     }
 
     //塑膠布相關動畫
