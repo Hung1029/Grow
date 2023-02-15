@@ -32,6 +32,7 @@ public class MainController : MonoBehaviour
 
     public void StageButtonClick(int stagenum)
     {
+        ButtonClickAudioPlay();
         for (int i = 0; i < page.Length; i++)
         {
             page[i].SetActive(false);
@@ -43,6 +44,7 @@ public class MainController : MonoBehaviour
 
     public void BackToMenuClick()
     {
+        ButtonClickAudioPlay();
         for (int i = 0; i < page.Length; i++)
         {
             page[i].SetActive(false);
@@ -53,6 +55,12 @@ public class MainController : MonoBehaviour
 
     public void EnterStageClick(int num)
     {
+        ButtonClickAudioPlay();
         Debug.Log("EnterStage: "+num);
+    }
+
+    public void ButtonClickAudioPlay()
+    { 
+        FindObjectOfType<SoundManager>().Play("button_click");
     }
 }
