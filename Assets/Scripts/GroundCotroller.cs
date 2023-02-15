@@ -14,6 +14,12 @@ public class GroundCotroller : ObjectController
     private bool delay_ground = false;
     private float timestamp = 0;
 
+    public AudioSource levelUp;
+
+
+    public void PlayLevelU() {
+        levelUp.Play(0);
+    }
 
     //塑膠布相關動畫
     public void SetPlasticAnim()

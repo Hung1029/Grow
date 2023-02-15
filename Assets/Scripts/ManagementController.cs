@@ -29,6 +29,8 @@ public class ManagementController : MonoBehaviour
     public GameObject btn_plastic;
     public GameObject btn_hat;
 
+    public AudioSource audioClick;
+
     public GameObject[] btn_label;
 
     private int farmer_level = 0;
@@ -325,5 +327,6 @@ public class ManagementController : MonoBehaviour
                 SetPlastic();
                 break;
         }
+        audioClick.Play(0);
     }
 }
