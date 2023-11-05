@@ -4864,8 +4864,8 @@ MonoBehaviour:
   level: 0
   audio_gress: {fileID: 0}
   audio_seed: {fileID: 2051040199}
-  shrink: {fileID: 0}
-  hat: {fileID: 0}
+  shrink: {fileID: 2051040201}
+  hat: {fileID: 2051040200}
 --- !u!95 &2051040196
 Animator:
   serializedVersion: 4
