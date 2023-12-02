@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainController : MonoBehaviour
@@ -56,7 +57,10 @@ public class MainController : MonoBehaviour
     public void EnterStageClick(int num)
     {
         ButtonClickAudioPlay();
-        Debug.Log("EnterStage: "+num);
+        //Debug.Log("EnterStage: "+num);
+
+        SceneManager.LoadScene(num);
+
     }
 
     public void ButtonClickAudioPlay()
